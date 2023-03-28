@@ -1,0 +1,85 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body section {
+  display: flex;
+  flex-direction: column;
+}
+
+.established-tasks {
+  width: 80%;
+  margin: 10px auto 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.established-tasks h3 {
+  padding-left: 10px;
+}
+.established-tasks ul.task-list {
+  padding-left: 0;
+}
+.established-tasks .task-item {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 10px;
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+.established-tasks .task-item li {
+  list-style: none;
+}
+.established-tasks .task-title {
+  font-weight: 600;
+}
+
+.new-task-form {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  padding: 10px;
+  flex-flow: column wrap;
+}
+.new-task-form h3 {
+  margin: 5px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-edit {
+  background-color: skyblue;
+  height: 25px;
+  margin-top: 10px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.btn-delete {
+  background-color: #FFCCCB;
+  height: 25px;
+  margin-top: 10px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.edit-task {
+  display: flex;
+  justify-content: center;
+}
+.edit-task form {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */

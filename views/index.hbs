@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/js/button_delete.js" defer></script>
+    <title>Task Manager</title>
+</head>
+<body>
+    <section>
+        <div class="established-tasks">
+            <h3>Scheduled tasks:</h3>
+            <ul class="task-list">
+                {{#each tasks}}
+                    <li class="task-item">
+                        {{#with this}}
+                        <p class="task-title"><i>Title</i>: {{name}}</p>
+                        <ul>
+                            <li>Status: {{statusMeaning status}}</li>
+                            <li>Due date: {{locale dueDate}}</li>
+                            <li class="flex-row">
+                                <form action="/edit" method="get" class="edit-btn-wrapper">
+                                    <input type="hidden" name="id" value="{{_id}}">
+                                    <button type="submit" class="btn-edit">Edit</button>
+                                </form>
+                                <div>
+                                    <input type="hidden" name="id" value="{{_id}}">
+                                    <button type="submit" class="btn-delete">Delete</button>
+                                </div>
+                            </li>
+                        </ul>
+                        {{/with}}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <form class="new-task-form" action="/new" method="POST">    
+            <div class="task-element">
+                <h3>Task title</h3>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="task-element">
+                <h3>Task status</h3>
+                <div>
+                    <input type="radio" name="status" id="status-todo" value="0">
+                    <label for="status-todo">Todo</label>
+                </div>
+                <div>
+                    <input type="radio" name="status" id="status-pending" value="1">
+                    <label for="status-pending">Pending</label>
+                </div>
+                <div>
+                    <input type="radio" name="status" id="status-done" value="2">
+                    <label for="status-done">Done</label>
+                </div>
+            </div>
+            <div class="task-element">
+                <h3>Due of</h3>
+                <input type="date" name="dueDate" id="">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+</body>
+</html>
